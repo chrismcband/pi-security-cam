@@ -36,3 +36,8 @@
 [hidden][style="display: block;"] {
   display: block !important;
 }
+
+.camera-photo {
+  width: 400px;
+  height: 300px;
+}

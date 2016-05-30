@@ -43,3 +43,4 @@ def take_photo(self, photo_path=None):
     sleep(2)
     camera.capture(photo_path)
     camera.stop_preview()
+    sleep(2)

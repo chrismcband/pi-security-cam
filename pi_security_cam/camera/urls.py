@@ -15,5 +15,10 @@ urlpatterns = [
         regex=r'^image$',
         view=views.image,
         name='image',
-    )
+    ),
+    url(
+        regex=r'^snapshot$',
+        view=views.take_snapshot,
+        name='snapshot',
+    ),
 ]
