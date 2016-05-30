@@ -18,7 +18,7 @@ def camera(request):
 def image(request):
     if os.path.exists('/tmp/photo.jpg'):
         image_data = open('/tmp/photo.jpg', 'rb').read()
-        return HttpResponse(image_data, mimetype='image/jpeg')
+        return HttpResponse(image_data, content_type='image/jpeg')
 
 @login_required
 def take_snapshot(request):
