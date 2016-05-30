@@ -8,7 +8,12 @@ urlpatterns = [
     # URL pattern for the UserListView
     url(
         regex=r'^$',
-        view=views.photo,
+        view=views.camera,
         name='photo',
     ),
+    url(
+        regex=r'^image$',
+        view=views.image,
+        name='image',
+    )
 ]
