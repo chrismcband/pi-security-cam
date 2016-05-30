@@ -1,6 +1,8 @@
 
 from __future__ import absolute_import
 import os
+from picamera import PiCamera
+from time import sleep
 from celery import Celery
 from django.apps import AppConfig
 from django.conf import settings
@@ -24,11 +26,20 @@ class CeleryConfig(AppConfig):
         app.config_from_object('django.conf:settings')
         app.autodiscover_tasks(lambda: settings.INSTALLED_APPS, force=True)
 
-        
-
-        
 
 
 @app.task(bind=True)
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))  # pragma: no cover
+
+
+@app.task(bind=True)
+def take_photo(self, photo_path=None):
+    if not photo_path:
+        photo_path = '/tmp/photo.jpg'
+
+    camera = PiCamera()
+    camera.start_preview()
+    sleep(2)
+    camera.capture(photo_path)
+    camera.stop_preview()

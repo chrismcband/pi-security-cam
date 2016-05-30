@@ -1,0 +1,13 @@
+libpq-dev
+python-dev
+virtualenvwrapper
+libjpeg-dev
+libtiff-dev
+zlib1g-dev
+libfreetype6-dev
+liblcms2-dev
+libwebp-dev
+tcl8.6-dev
+tk8.6-dev
+postgresql
+python-tk
