@@ -44,6 +44,7 @@ THIRD_PARTY_APPS = (
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'pi_security_cam.users',  # custom users app
+    'pi_security_cam.camera', # custom camera app
     # Your stuff: custom apps go here
 )
 
