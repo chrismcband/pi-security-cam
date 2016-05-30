@@ -39,11 +39,16 @@ def take_photo(self, photo_path=None):
     if not photo_path:
         photo_path = '/tmp/photo.jpg'
 
-    camera = PiCamera()
-    camera.start_preview()
-    sleep(2)
-    camera.capture(photo_path)
-    camera.stop_preview()
+    with PiCamera() as camera:
+        try:
+            camera = PiCamera()
+            camera.start_preview()
+            sleep(2)
+            camera.capture(photo_path)
+            camera.stop_preview()
+        finally:
+            camera.close()
+
     im = PilImage.open(photo_path)
     rotated_image = im.rotate(180)
     rotated_image.save(photo_path)
