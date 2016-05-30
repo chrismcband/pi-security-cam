@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.template.response import TemplateResponse
 from django.shortcuts import redirect
-from taskapp.celery import take_photo
+from pi_security_cam.taskapp.celery import take_photo
 import os
 
 @login_required
