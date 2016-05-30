@@ -6,6 +6,7 @@ from time import sleep
 from celery import Celery
 from django.apps import AppConfig
 from django.conf import settings
+from PIL import Image as PilImage
 
 
 if not settings.configured:
@@ -43,4 +44,7 @@ def take_photo(self, photo_path=None):
     sleep(2)
     camera.capture(photo_path)
     camera.stop_preview()
+    im = PilImage.open(photo_path)
+    rotated_image = im.rotate(180)
+    rotated_image.save(photo_path)
     sleep(2)
