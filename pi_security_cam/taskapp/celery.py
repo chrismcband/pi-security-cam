@@ -41,7 +41,6 @@ def take_photo(self, photo_path=None):
 
     with PiCamera() as camera:
         try:
-            camera = PiCamera()
             camera.start_preview()
             sleep(2)
             camera.capture(photo_path)
