@@ -1,0 +1,5 @@
+[run]
+include = pi_security_cam/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
