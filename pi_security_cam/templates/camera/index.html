@@ -5,10 +5,10 @@
 
 {% block content %}
     {% if image_ready %}
-        <img src="/camera/image" class="camera-photo" alt="Last taken camera image" />
-        <a href="/camera/snapshot">Take a picture</a>
+        <img src="{% url 'camera:image' %}" class="camera-photo" alt="Last taken camera image" />
+        <a href="{% url 'camera:snapshot' %}">Take a picture</a>
     {% else %}
         <h2>No image found</h2>
-        <a href="/camera/snapshot">Take a picture</a>
+        <a href="{% url 'camera:snapshot' %}">Take a picture</a>
     {% endif %}
 {% endblock content %}
